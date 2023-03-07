@@ -1,4 +1,11 @@
 //TODO: Add your imports here.
+//import 'package:bitcoin_ticker/';#
+import 'package:bitcoin_ticker/utilities/constants.dart';
+
+final String k_API_key = '61504C6E-1CCF-4381-B1DA-4F6A58DBD3FA';
+
+String coinAPIproduction = 'https://rest.coinapi.io/';
+String url = '$coinAPIproduction/v1/exchangerate/BTC?apikey=$k_API_key';
 
 const List<String> currenciesList = [
   'AUD',
@@ -30,9 +37,7 @@ const List<String> cryptoList = [
   'LTC',
 ];
 
-const coinAPIURL = 'https://rest.coinapi.io/v1/exchangerate';
-const apiKey = 'YOUR-API-KEY-HERE';
-
 class CoinData {
   //TODO: Create your getCoinData() method here.
+  double getCoinData() {}
 }
