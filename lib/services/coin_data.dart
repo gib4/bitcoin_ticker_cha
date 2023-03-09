@@ -1,11 +1,7 @@
-//TODO: Add your imports here.
-//import 'package:bitcoin_ticker/';#
+import 'package:bitcoin_ticker/services/networking.dart';
 import 'package:bitcoin_ticker/utilities/constants.dart';
 
-final String k_API_key = '61504C6E-1CCF-4381-B1DA-4F6A58DBD3FA';
-
-String coinAPIproduction = 'https://rest.coinapi.io/';
-String url = '$coinAPIproduction/v1/exchangerate/BTC?apikey=$k_API_key';
+String url = '$coinAPIURL/BTC?apikey=$apiKey';
 
 const List<String> currenciesList = [
   'AUD',
@@ -38,6 +34,29 @@ const List<String> cryptoList = [
 ];
 
 class CoinData {
-  //TODO: Create your getCoinData() method here.
-  double getCoinData() {}
+  String time;
+  String asset_id_quote;
+  double rate;
+
+  Future<dynamic> getCoinData() async {
+    NetworkHelper networkHelper = NetworkHelper(url);
+    var coinData = await networkHelper.getdata();
+    return coinData;
+  }
+//   dynamic coinData;
+//   if (coinData == null) {
+//         time = '0.0';
+//         asset_id_quote = '0.0';
+//         rate = 0.0;
+//         return;
+//       }
+
+// factory Photo.fromJson(Map<String, dynamic> json) {
+//     return Photo(
+//       time:             json[''] as String,
+//       asset_id_quote:   json['asset_id_quote'] as int,
+//       rate:             json['rate'] as String,
+//     );
+//   }
+
 }
