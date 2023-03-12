@@ -16,6 +16,7 @@ class NetworkHelper {
     } else {
       print('Status code not OK...');
       print(response.statusCode);
+      throw 'Problem with get request';
     }
   }
 }
